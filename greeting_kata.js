@@ -16,6 +16,12 @@ function greet(name) {
     else if (name.length == 2) {
         retString += name[0] + ' and ' + name[1];
     }
+    else {
+        for (var i = 0; i < name.length - 1; i++) {
+            retString += name[i] + ', '
+        }
+        retString += 'and ' + name[name.length - 1];
+    }
 
     if (isNameUppercase(name[0])) {
         retString = retString.toUpperCase();

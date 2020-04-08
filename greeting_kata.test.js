@@ -12,3 +12,8 @@ test('Shout Greeting', () => {
     expect(greet('JERRY')).toBe('HELLO, JERRY!')
 });
 
+test('Multi-name Greeting', () => {
+    expect(greet(['Jill', 'Jane'])).toBe('Hello, Jill and Jane.')
+});
+
+

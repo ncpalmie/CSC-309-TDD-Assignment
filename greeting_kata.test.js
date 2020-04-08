@@ -1,5 +1,6 @@
-const greeting = require('./greeting_kata')
+const greet = require('./greeting_kata')
 
 test('Name Greeting', () => {
     expect(greet('Bob')).toBe('Hello, Bob');
 });
+

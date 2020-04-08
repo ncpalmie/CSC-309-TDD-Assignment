@@ -12,8 +12,11 @@ test('Shout Greeting', () => {
     expect(greet('JERRY')).toBe('HELLO, JERRY!')
 });
 
-test('Multi-name Greeting', () => {
+test('Two Name Greeting', () => {
     expect(greet(['Jill', 'Jane'])).toBe('Hello, Jill and Jane.')
 });
 
+test('Multi-Name Greeting', () => {
+    expect(greet(['Amy', 'Brian', 'Charlotte'])).toBe('Hello, Amy, Brian, and Charlotte.')
+});
 

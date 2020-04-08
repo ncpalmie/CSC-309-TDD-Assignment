@@ -1,10 +1,10 @@
 function greet(name) {
+    retString = 'Hello, '
     if (name == null) {
-        return 'Hello, my friend.';
+        name = 'my friend';
     }
-    else {
-        return 'Hello, ' + name;
-    }
+    retString += name + '.';
+    return retString;
 }
 
 module.exports = greet; 

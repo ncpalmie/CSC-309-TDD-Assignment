@@ -5,10 +5,21 @@ function greet(name) {
         name = 'my friend';
     }
 
-    retString += name + '.';
+    retString += name;
+
+    if (isNameUppercase(name)) {
+        retString = retString.toUpperCase();
+        retString += '!';
+    }
+    else {
+        retString += '.';
+    }
 
     return retString;
 }
 
+function isNameUppercase(name) {
+    return name == name.toUpperCase();
+}
 
 module.exports = greet; 

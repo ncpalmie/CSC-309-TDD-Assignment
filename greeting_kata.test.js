@@ -27,3 +27,7 @@ test('Multi-Name Shout Greeting', () => {
 test('Comma Name Greeting', () => {
     expect(greet(['Bob', 'Charlie, Dianne'])).toBe('Hello, Bob, Charlie, and Dianne.');
 });
+
+test('Escaped Comma Name Greeting', () => {
+    expect(greet(['Bob', '\"Charlie, Dianne\"'])).toBe('Hello, Bob, Charlie, and Dianne.');
+});

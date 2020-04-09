@@ -9,7 +9,7 @@ test('Null Greeting', () => {
 });
 
 test('Shout Greeting', () => {
-    expect(greet('JERRY')).toBe('HELLO, JERRY!')
+    expect(greet('JERRY')).toBe('HELLO JERRY!')
 });
 
 test('Two Name Greeting', () => {

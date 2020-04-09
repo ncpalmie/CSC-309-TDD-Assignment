@@ -6,17 +6,34 @@ function greet(name) {
     if (!Array.isArray(name)) {
         if (name == null)
             lowerNames.push('my friend');
+        else if (name.includes(',')) {
+            name = name.split(', ');
+        }
         else if (isNameUppercase(name))
             upperNames.push(name);
         else
             lowerNames.push(name);
     }
-    else {
+    if (Array.isArray(name)) {
         for (var i = 0; i < name.length; i++) {
-            if (isNameUppercase(name[i]))
-                upperNames.push(name[i]);
-            else
-                lowerNames.push(name[i]);
+            if (isNameUppercase(name[i])) {
+                if (name[i].includes(',')) {
+                    name_arr = name[i].split(', ');
+                    upperNames.push(name_arr[0])
+                    upperNames.push(name_arr[1]);
+                }
+                else
+                    upperNames.push(name[i]);
+            }
+            else {
+                if (name[i].includes(',')) {
+                    name_arr = name[i].split(', ');
+                    lowerNames.push(name_arr[0])
+                    lowerNames.push(name_arr[1]);
+                }
+                else
+                    lowerNames.push(name[i]);
+            }
         }
     }
     
@@ -31,7 +48,7 @@ function greet(name) {
     }
     else if (lowerNames.length >= 3) {
         for (var i = 0; i < lowerNames.length - 1; i++) {
-            retString += name[i] + ', '
+            retString += lowerNames[i] + ', '
         }
         retString += 'and ' + lowerNames[lowerNames.length - 1] + '.';
     }

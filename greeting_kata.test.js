@@ -29,5 +29,5 @@ test('Comma Name Greeting', () => {
 });
 
 test('Escaped Comma Name Greeting', () => {
-    expect(greet(['Bob', '\"Charlie, Dianne\"'])).toBe('Hello, Bob, Charlie, and Dianne.');
+    expect(greet(['Bob', '\"Charlie, Dianne\"'])).toBe('Hello, Bob and Charlie, Dianne.');
 });

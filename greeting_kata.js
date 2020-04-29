@@ -7,7 +7,11 @@ function greet(name) {
         if (name == null)
             lowerNames.push('my friend');
         else if (name.includes(',')) {
-            name = name.split(', ');
+            if (name.includes('\"')) {
+                name = name.slice(1, -1);
+            }
+            else
+                name = name.split(', ');
         }
         else if (isNameUppercase(name))
             upperNames.push(name);
@@ -18,18 +22,28 @@ function greet(name) {
         for (var i = 0; i < name.length; i++) {
             if (isNameUppercase(name[i])) {
                 if (name[i].includes(',')) {
-                    name_arr = name[i].split(', ');
-                    upperNames.push(name_arr[0])
-                    upperNames.push(name_arr[1]);
+                    if (name[i].includes('\"')) {
+                        upperNames.push(name[i].slice(1, -1));
+                    }
+                    else {
+                        name_arr = name[i].split(', ');
+                        upperNames.push(name_arr[0])
+                        upperNames.push(name_arr[1]);
+                    }
                 }
                 else
                     upperNames.push(name[i]);
             }
             else {
                 if (name[i].includes(',')) {
-                    name_arr = name[i].split(', ');
-                    lowerNames.push(name_arr[0])
-                    lowerNames.push(name_arr[1]);
+                    if (name[i].includes('\"')) {
+                        lowerNames.push(name[i].slice(1, -1));
+                    }
+                    else {
+                        name_arr = name[i].split(', ');
+                        lowerNames.push(name_arr[0])
+                        lowerNames.push(name_arr[1]);
+                    }
                 }
                 else
                     lowerNames.push(name[i]);
